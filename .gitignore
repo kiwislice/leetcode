@@ -1,0 +1,11 @@
+*.class
+*.settings
+*.project
+*.classpath
+.DS_Store
+*.tmp
+*.bak
+*.jar
+target/*
+
+
