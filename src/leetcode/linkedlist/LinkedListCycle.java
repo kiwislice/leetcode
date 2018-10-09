@@ -1,5 +1,8 @@
 package leetcode.linkedlist;
 
+/**
+ * https://leetcode.com/problems/linked-list-cycle/
+ */
 public class LinkedListCycle {
 	
 	public boolean hasCycle(ListNode head) {
