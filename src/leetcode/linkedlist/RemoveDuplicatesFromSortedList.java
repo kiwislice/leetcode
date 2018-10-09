@@ -1,4 +1,4 @@
-package leetccode.linkedlist;
+package leetcode.linkedlist;
 
 /**
  * https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
