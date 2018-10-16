@@ -6,36 +6,32 @@ package leetcode.math;
 public class RectangleOverlap {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// false
+		int[] rec1 = {0,0,1,1};
+		int[] rec2 = {1,0,2,1};
+		System.out.println(isRectangleOverlap(rec1, rec2));
 
 	}
 
-	public boolean isRectangleOverlap(int[] rec1, int[] rec2) {
-		boolean suc = containsPoint(rec1, new int[] {rec2[0], rec2[1]});
-		suc |= containsPoint(rec1, new int[] {rec2[0], rec2[3]});
-		suc |= containsPoint(rec1, new int[] {rec2[2], rec2[1]});
-		suc |= containsPoint(rec1, new int[] {rec2[2], rec2[3]});
-		
-		suc |= containsPoint(rec2, new int[] {rec1[0], rec1[1]});
-		suc |= containsPoint(rec2, new int[] {rec1[0], rec1[3]});
-		suc |= containsPoint(rec2, new int[] {rec1[2], rec1[1]});
-		suc |= containsPoint(rec2, new int[] {rec1[2], rec1[3]});
-		
-		
-		
+	public static boolean isRectangleOverlap(int[] rec1, int[] rec2) {
+		return containsX(rec1, rec2) && containsY(rec1, rec2);
 	}
 
-	public static boolean containsPoint(int[] rec, int[] p) {
-		boolean suc = rec[0] <= p[0] && p[0] <= rec[2];
-		suc &= rec[1] <= p[1] && p[1] <= rec[3];
+	public static boolean containsX(int[] rec1, int[] rec2) {
+		boolean suc = rec1[0] < rec2[0] && rec2[0] < rec1[2];
+		suc |= rec1[0] < rec2[2] && rec2[2] < rec1[2];
+		
+		suc |= rec2[0] < rec1[0] && rec1[0] < rec2[2];
+		suc |= rec2[0] < rec1[2] && rec1[2] < rec2[2];
 		return suc;
 	}
 
-	public static boolean containsPath(int[] rec1, int[] rec2) {
-		boolean suc = rec1[0] <= rec2[0] && rec2[0] <= rec1[2];
+	public static boolean containsY(int[] rec1, int[] rec2) {
+		boolean suc = rec1[1] < rec2[1] && rec2[1] < rec1[3];
+		suc |= rec1[1] < rec2[3] && rec2[3] < rec1[3];
 		
-		
-		suc &= rec[1] <= p[1] && p[1] <= rec[3];
+		suc |= rec2[1] < rec1[1] && rec1[1] < rec2[3];
+		suc |= rec2[1] < rec1[3] && rec1[3] < rec2[3];
 		return suc;
 	}
 
