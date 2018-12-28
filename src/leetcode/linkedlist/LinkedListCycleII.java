@@ -91,14 +91,4 @@ public class LinkedListCycleII {
 		return null;
 	}
 	
-	static class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-	}
-
 }
