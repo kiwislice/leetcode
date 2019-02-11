@@ -1,7 +1,5 @@
 package leetcode.notag;
 
-import java.util.Arrays;
-
 /**
  * https://leetcode.com/problems/increasing-triplet-subsequence/
  */
